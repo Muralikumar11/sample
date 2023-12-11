@@ -1,0 +1,103 @@
+user management
+
+if anyone will you ask to create one user and password and give. 
+example name -- ramesh 
+
+1.create user 
+useradd <user name>
+passwd <enter password>
+/etc/passwd -> will have user enties, when a user is created 
+               automatically group will created with same username
+complete it then we will goto the vi data entry
+
+vi etc/ssh/sshd_config --> enter and enable/on the passwd authentication	
+getent groups		   
+sshd -t --> you complete the vi data enter this command if there 
+            an any erros this command will show no erros it cannot sho
+2. groups
+
+groupadd name			
+            every user will have primary and secondary groups
+            you want to two groups at the same time
+usermod -g name1 name2
+-g --> primary group
+-aG --> secindary group
+
+3. change the ownership
+chown --> even file owner also can't run this command only sudo 
+          sudo user can change the ownership
+chown <user>:<group> filename -->we can give the access of to change 
+                              the ownership  to the file
+
+4. process management
+ if you follow the process you will get the best results
+ linux is follow the process 100%  everything will be linux process
+
+ps -ef | grep jenkins --> it will show directly the jenkins will 
+                          run or not.not only jenkins you can check
+                          any machine
+yum list installed --> it will show the installed packeges all
+yum list installed | grep git --> it will show the full of information 
+                                  about git or any packege details youwant
+yum search git --> you can search about git
+yum remove git -y --> remove the git
+  
+port numbers
+
+ssh -> 22 port numbers
+http -> 80 port numbers
+https -> 443 port numbers
+mysql -> 3306
+smtp ->25 for the mails
+
+     If you can run any type of operations inthe system. the port number 
+     will allocated for that operations 	 
+	 
+netstat -lntp --> check the port numbers will run or not
+	     L->listing, N->process number, P->protocal, T->
+		 
+troble shooting 
+---------------
+check system resources
+cpu memory
+hd full-->du -ht -> can check the how much data will consume
+ram full-->free help ->enter this command and check the ram details 
+     cpu memory,hd full,ram full,->if full the these memory we will not get 
+     get the system resources
+process is running or not
+port is opean or not
+systemctl status <services>
+firewall is opean or not	
+
+Nginix
+------
+frontend servers--> http servers = 80
+hosts html/js based applications
+
+backend seervers-->http = 8080
+tomcat,jboss,java,.net,python
+
+Linux file system servers
+--------------------------
+/ -->root folder for linux server 
+boot -->when the server is getting started, server refers this directory 
+      and configuration from --> grub.cfg
+dev --> devices --> external devices are mounted here 
+etc --> extra configuration 
+home --> users home directories are created here 
+lib/lib64 --> system needs liabraries
+/media --> cd/dvd drive
+/mnt --> extra disks mount here
+/opt --> optional,mannual instalation of services or applications will be
+         downloaded here
+/proc --> running process will be store here with their PID
+/proc /cpuinfo
+/proc /meminfo
+/root --> root user home folder
+/run --> when server starts,server uses as this directory as storage 
+/bin --> cat,vim,touch,cd/dvd
+/sbin --> system commands like root access commands
+/temp --> temp files not important
+/usr --> all users
+/var --> variables,log files
+		 
